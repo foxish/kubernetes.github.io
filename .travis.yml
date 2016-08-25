@@ -6,7 +6,7 @@ go:
 install:
 - mkdir -p $HOME/gopath/src/k8s.io
 - mv $TRAVIS_BUILD_DIR $HOME/gopath/src/k8s.io/kubernetes.github.io
-- go get -t -v k8s.io/kubernetes.github.io
+- go get -t -v k8s.io/kubernetes.github.io/test
 #- git clone https://github.com/kubernetes/md-check k8s
 #- go get -t -v ./md-check
 
