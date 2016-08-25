@@ -3,5 +3,8 @@ go:
   - 1.6
 
 # Don't want default ./... here:
-install: go get -t -v ./test
+install:
+- go get -t -v ./test
+- go get -t -v github.com/kubernetes/md-check
+
 script: go test -v ./test
