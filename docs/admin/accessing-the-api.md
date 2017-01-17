@@ -86,7 +86,7 @@ For version 1.2, clusters created by `kube-up.sh` are configured so that no auth
 required for any request.
 
 As of version 1.3, clusters created by `kube-up.sh` are configured so that the ABAC authorization
-modules is enabled.  However, its input file is initially set to allow all users to do all
+modules are enabled.  However, its input file is initially set to allow all users to do all
 operations.  The cluster administrator needs to edit that file, or configure a different authorizer
 to restrict what users can do.
 
@@ -94,7 +94,7 @@ to restrict what users can do.
 The Authorization step is designed to operate on attributes that are likely to be common to most
 REST requests, such as object name, kind, etc.  This is intended to facilitate interation with
 existing organization-wide or cloud-provider-wide access control systems (which may handle
-other APIs besides the Kubernetes API.
+other APIs besides the Kubernetes API).
 
 Access controls and policies that depend on specific fields of specific Kinds of objects
 are handled by Admission Controllers.
@@ -127,7 +127,7 @@ for the corresponding API object, and then written to the object store (shown as
 The previous discussion applies to requests sent to the secure port of the API server
 (the typical case).  The API server can actually serve on 2 ports:
 
-By default the Kubernetes APIserver serves HTTP on 2 ports:
+By default the Kubernetes API server serves HTTP on 2 ports:
 
   1. `Localhost Port`:
 

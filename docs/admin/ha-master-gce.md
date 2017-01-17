@@ -1,13 +1,11 @@
 ---
 assignees:
 - jszczepkowski
-
+title: Setting up High-Availability Kubernetes Masters
 ---
 
 * TOC
 {:toc}
-
-## Introduction
 
 Kubernetes version 1.5 adds alpha support for replicating Kubernetes masters in `kube-up` or `kube-down` scripts for Google Compute Engine.
 This document describes how to use kube-up/down scripts to manage highly available (HA) masters and how HA masters are implemented for use with GCE.
@@ -24,7 +22,7 @@ If true, reads will be directed to leader etcd replica.
 Setting this value to true is optional: reads will be more reliable but will also be slower.
 
 Optionally, you can specify a GCE zone where the first master replica is to be created.
-Set the the following flag:
+Set the following flag:
 
 * `KUBE_GCE_ZONE=zone` - zone where the first master replica will run.
 

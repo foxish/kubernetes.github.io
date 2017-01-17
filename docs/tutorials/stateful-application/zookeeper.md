@@ -173,7 +173,7 @@ zk-2
 ```
 
 The servers in a ZooKeeper ensemble use natural numbers as unique identifiers, and 
-each server's identifier is stored in a file called `myid` in the server’s 
+each server's identifier is stored in a file called `myid` in the server's 
 data directory. 
 
 Examine the contents of the `myid` file for each server.
@@ -799,7 +799,7 @@ Examine the process tree for the ZooKeeper server running in the `zk-0` Pod.
 kubectl exec zk-0 -- ps -ef
 ```
 
-The command used as the container's entry point has PID 1, and the 
+The command used as the container's entry point has PID 1, and 
 the ZooKeeper process, a child of the entry point, has PID 23.
 
 
@@ -1063,13 +1063,15 @@ for i in 0 1 2; do kubectl get pod zk-$i --template {{.spec.nodeName}}; echo "";
 kubernetes-minion-group-pb41
 kubernetes-minion-group-ixsl
 kubernetes-minion-group-i4c4
-{% endraw %}```
+{% endraw %}
+```
 
 Use [`kubectl drain`](/docs/user-guide/kubectl/kubectl_drain/) to cordon and 
 drain the node on which the `zk-0` Pod is scheduled.
 
 ```shell {% raw %}
 kubectl drain $(kubectl get pod zk-0 --template {{.spec.nodeName}}) --ignore-daemonsets --force --delete-local-data
+node "kubernetes-minion-group-pb41" cordoned
 WARNING: Deleting pods not managed by ReplicationController, ReplicaSet, Job, or DaemonSet: fluentd-cloud-logging-kubernetes-minion-group-pb41, kube-proxy-kubernetes-minion-group-pb41; Ignoring DaemonSet-managed pods: node-problem-detector-v0.1-o5elz
 pod "zk-0" deleted
 node "kubernetes-minion-group-pb41" drained
