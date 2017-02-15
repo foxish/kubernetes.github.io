@@ -16,10 +16,7 @@ install:
 # The dependencies are complicated, in that the libraries themselves import other packages.
 # For example, we vendor in packages from apimachinery and client-go, but client-go itself vendors
 # in apimachinery. This leads to conflicting versions in the two cases.
-- pushd $PWD
-- cd k8s.io/kubernetes.github.io/
 - govend -v
-- popd
 #- rm $GOPATH/src/k8s.io/kubernetes/vendor/k8s.io/apimachinery
 #- rm $GOPATH/src/k8s.io/kubernetes/vendor/k8s.io/apiserver
 #- rm $GOPATH/src/k8s.io/kubernetes/vendor/k8s.io/client-go
